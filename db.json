@@ -17,24 +17,7 @@
       "name": "Mintesinot Bekele Negash",
       "email": "mintesinotbekele1240@gmail.com",
       "password": "12345678",
-      "cartData": [
-        {
-          "id": 2,
-          "count": 3
-        },
-        {
-          "id": 3,
-          "count": 1
-        },
-        {
-          "id": 6,
-          "count": 1
-        },
-        {
-          "id": 4,
-          "count": 8
-        }
-      ],
+      "cartData": [],
       "addressData": {}
     }
   ]
