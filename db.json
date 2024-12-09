@@ -1,18 +1,6 @@
 {
   "user": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "john.doe@example.com",
-      "password": "password123"
-    },
-    {
-      "id": "ca57",
-      "name": "John Doe m",
-      "email": "john.doe@examplem.com",
-      "password": "password123m"
-    },
-    {
       "id": "1b6b",
       "name": "Mintesinot Bekele Negash",
       "email": "mintesinotbekele1240@gmail.com",
