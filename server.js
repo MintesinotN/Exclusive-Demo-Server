@@ -1,20 +1,12 @@
-const jsonServer = require("json-server");
-const server = jsonServer.create();
-const router = jsonServer.router("db.json");
-const middlewares = jsonServer.defaults();
+const jsonServer = require('json-server'); // Import json-server
+const server = jsonServer.create(); // Create server instance
+const router = jsonServer.router('db.json'); // Link to db.json
+const middlewares = jsonServer.defaults(); // Get default middlewares
 
-server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Authorization");
-  if (req.method === "OPTIONS") {
-    res.sendStatus(204);
-  } else {
-    next();
-  }
+server.use(middlewares); // Use default middlewares
+server.use(router); // Attach the router
+
+const PORT = process.env.PORT || 3000; // Define port
+server.listen(PORT, () => {
+  console.log(`JSON Server is running on http://localhost:${PORT}`);
 });
-
-server.use(middlewares);
-server.use(router);
-
-module.exports = server;
