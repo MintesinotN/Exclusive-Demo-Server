@@ -32,12 +32,13 @@ const addUser = async(req,res)=>{
 }
 
 const updateCart = async (req, res) => {
-  const userId = req.params.id;
-
+    const userId = req.params.id;
+    const { cartData } = req.body;
   try {
-      const updatedCart = await userModel.findByIdAndUpdate(
-          userId, 
-          req.body, 
+    const updatedCart = await User.findOneAndUpdate(
+        { _id: userId },  // Query to find the user by _id
+        { $set: { cartData } },  // Update the cartData field
+        { new: true }  // Option to return the updated document
       );
 
       if (!updatedCart) {
