@@ -35,8 +35,8 @@ const updateCart = async (req, res) => {
     const userId = req.params.id;
     const { cartData } = req.body;
   try {
-    const updatedCart = await User.findOneAndUpdate(
-        { _id: userId },  // Query to find the user by _id
+    const updatedCart = await userModel.findByIdAndUpdate(
+        userId,  // Query to find the user by _id
         { $set: { cartData } },  // Update the cartData field
         { new: true }  // Option to return the updated document
       );
@@ -52,4 +52,25 @@ const updateCart = async (req, res) => {
   }
 };
 
-export {listUser,addUser,updateCart}
+const updateAddress = async (req, res) => {
+    const userId = req.params.id;
+    const { AddressData } = req.body;
+  try {
+    const updatedAddress = await userModel.findByIdAndUpdate(
+        userId ,  // Query to find the user by _id
+        { $set: { AddressData } },  // Update the AddressData field
+        { new: true }  // Option to return the updated document
+      );
+
+      if (!updatedAddress) {
+          return res.status(404).json({ message: 'Address not found' });
+      }
+
+      res.status(200).json({ message: `Address ID ${userId} updated successfully`, user: updatedAddress });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error updating address', error: error.message });
+  }
+};
+
+export {listUser,addUser,updateCart,updateAddress}
