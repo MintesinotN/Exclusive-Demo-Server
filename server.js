@@ -7,7 +7,7 @@ const app = express()
 const port = process.env.PORT || 4000;
 
 const corsOptions = {
-  origin: 'https://exclusive-ecommerce-ten.vercel.app/',  // Allow your frontend domain
+  origin: 'https://exclusive-ecommerce-ten.vercel.app',  // Allow your frontend domain
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],  // Allow all necessary methods
   allowedHeaders: ['Content-Type', 'Authorization'],  // Allow headers you might need
   credentials: true,  // Allow cookies if needed
