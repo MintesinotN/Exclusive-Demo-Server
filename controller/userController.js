@@ -54,11 +54,11 @@ const updateCart = async (req, res) => {
 
 const updateAddress = async (req, res) => {
     const userId = req.params.id;
-    const { AddressData } = req.body;
+    const { addressData } = req.body;
   try {
     const updatedAddress = await userModel.findByIdAndUpdate(
         userId ,  // Query to find the user by _id
-        { $set: { AddressData } },  // Update the AddressData field
+        { $set: { addressData } },  // Update the AddressData field
         { new: true }  // Option to return the updated document
       );
 
