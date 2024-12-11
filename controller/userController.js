@@ -42,7 +42,7 @@ const updateCart = async (req, res) => {
       );
 
       if (!updatedCart) {
-          return res.status(200).json({ message: 'Cart not found' });
+          return res.status(404).json({ message: 'Cart not found' });
       }
 
       res.status(200).json({ message: `Cart ID ${userId} updated successfully`, user: updatedCart });
@@ -63,7 +63,7 @@ const updateAddress = async (req, res) => {
       );
 
       if (!updatedAddress) {
-          return res.status(200).json({ message: 'Address not found' });
+          return res.status(404).json({ message: 'Address not found' });
       }
 
       res.status(200).json({ message: `Address ID ${userId} updated successfully`, user: updatedAddress });
