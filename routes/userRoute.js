@@ -5,7 +5,7 @@ const userRouter = express.Router()
 
 userRouter.get("/users",listUser)
 userRouter.post("/users",addUser)
-userRouter.patch("/users/cart/:id",updateCart)
+userRouter.patch("/users/:id",updateCart)
 userRouter.patch("/users/address/:id",updateAddress)
 
 export default userRouter;
