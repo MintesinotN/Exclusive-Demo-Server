@@ -1,11 +1,9 @@
 import express from 'express'
-import { addUser, listUser, updateAddress, updateCart } from '../controller/userController.js';
+import { loginUser,registerUser } from '../controllers/userController.js'
 
 const userRouter = express.Router()
 
-userRouter.get("/users",listUser)
-userRouter.post("/users",addUser)
-userRouter.patch("/users/cart/:id",updateCart)
-userRouter.patch("/users/address/:id",updateAddress)
+userRouter.post("/register",registerUser)
+userRouter.post("/login",loginUser)
 
 export default userRouter;
