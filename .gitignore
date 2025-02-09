@@ -4,6 +4,12 @@
 # Dependencies
 node_modules/
 
+# Node modules
+/node_modules
+/.pnp
+.pnp.js
+
+
 # Logs
 logs/
 *.log
